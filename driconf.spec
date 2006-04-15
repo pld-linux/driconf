@@ -10,8 +10,7 @@ Source0:	http://dri.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.gz
 URL:		http://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
 BuildRequires:	python
 BuildRequires:	python-modules
-# xdriinfo exists only in X.org X11 >= 6.8
-Requires:	X11-tools >= 1:6.8.0
+Requires:	xorg-app-xdriiinfo
 Requires:	python-pygtk-gtk >= 2:2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
