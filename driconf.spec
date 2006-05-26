@@ -11,7 +11,7 @@ URL:		http://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
 BuildRequires:	python
 BuildRequires:	python-modules
 Requires:	python-pygtk-gtk >= 2:2.4
-Requires:	xorg-app-xdriiinfo
+Requires:	xorg-app-xdriinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
