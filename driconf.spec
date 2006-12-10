@@ -13,7 +13,7 @@ BuildRequires:	python-modules
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 Requires:	python-pygtk-gtk >= 2:2.4
-Requires:	xorg-app-xdriinfo
+Requires:	X11-tools
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
