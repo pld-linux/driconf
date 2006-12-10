@@ -1,15 +1,17 @@
 Summary:	DRI configuration GUI
 Summary(pl):	Graficzny interfejs do konfiguracji DRI
 Name:		driconf
-Version:	0.9.0
-Release:	3
+Version:	0.9.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://dri.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.gz
-# Source0-md5:	da322248d5ed008ded4999f319544062
+Source0:	http://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.gz
+# Source0-md5:	76d610bcd56aa5e8a489debb5081178a
 URL:		http://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
 BuildRequires:	python
 BuildRequires:	python-modules
+BuildRequires:	python-devel
+BuildRequires:	rpm-pythonprov
 Requires:	python-pygtk-gtk >= 2:2.4
 Requires:	xorg-app-xdriinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
