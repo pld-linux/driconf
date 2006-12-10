@@ -9,8 +9,8 @@ Source0:	http://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.g
 # Source0-md5:	76d610bcd56aa5e8a489debb5081178a
 URL:		http://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
 BuildRequires:	python
-BuildRequires:	python-modules
 BuildRequires:	python-devel
+BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
 Requires:	python-pygtk-gtk >= 2:2.4
 Requires:	xorg-app-xdriinfo
