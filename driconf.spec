@@ -7,10 +7,11 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.gz
 # Source0-md5:	76d610bcd56aa5e8a489debb5081178a
+Patch1:		%{name}-desktop.patch
 URL:		http://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
 BuildRequires:	python
+BuildRequires:  python-devel
 BuildRequires:	python-modules
-BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 Requires:	python-pygtk-gtk >= 2:2.4
 Requires:	X11-tools
@@ -28,12 +29,14 @@ python-gtk.
 
 %prep
 %setup -q
+%patch1 -p0
 
 %build
 python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
+mkdir -p $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
 python setup.py install \
 	--optimize=2 \
@@ -42,6 +45,10 @@ python setup.py install \
 	--root=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{py_sitescriptdir}/*.py
+
+mv %{name}.desktop $RPM_BUILD_ROOT%{_desktopdir}
+mv %{name}-icon.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+
 
 %find_lang %{name}
 
@@ -52,5 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGELOG README TODO
 %attr(755,root,root) %{_bindir}/*
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.png
 %{_datadir}/driconf
 %{py_sitescriptdir}/*.py[co]
