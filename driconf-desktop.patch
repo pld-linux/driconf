@@ -14,5 +14,5 @@
 +Icon=driconf.png
  Type=Application
 -Categories=GNOME;Application;Settings;AdvancedSettings;
-+Categories=GTK;Application;Settings;HardwareSettings;
++Categories=GTK;Settings;HardwareSettings;
  StartupNotify=true
