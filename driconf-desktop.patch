@@ -1,0 +1,18 @@
+--- driconf.desktop.org	2006-12-12 11:50:54.705979750 +0100
++++ driconf.desktop	2006-12-12 12:02:02.227697250 +0100
+@@ -1,9 +1,11 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+-Name=3D Acceleration
++Name=DriConf
++Name[pl]=DriConf
+-Comment=Change 3D Acceleration options
++Comment=DRIconf - configuration applet for the DRI
++Comment[pl]=DRIconf - program do konfiguracji DRI
+ Exec=driconf
+-Icon=/usr/local/share/driconf/driconf-icon.png
++Icon=driconf.png
+ Type=Application
+-Categories=GNOME;Application;Settings;AdvancedSettings;
++Categories=GTK;Application;Settings;HardwareSettings;
+ StartupNotify=true
