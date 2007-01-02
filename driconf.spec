@@ -10,11 +10,11 @@ Source0:	http://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.g
 Patch1:		%{name}-desktop.patch
 URL:		http://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
 BuildRequires:	python
-BuildRequires:  python-devel
+BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
-Requires:	python-pygtk-gtk >= 2:2.4
 Requires:	X11-tools
+Requires:	python-pygtk-gtk >= 2:2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,7 +36,7 @@ python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
 python setup.py install \
 	--optimize=2 \
