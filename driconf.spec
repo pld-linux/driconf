@@ -1,5 +1,5 @@
 Summary:	DRI configuration GUI
-Summary(pl):	Graficzny interfejs do konfiguracji DRI
+Summary(pl.UTF-8):   Graficzny interfejs do konfiguracji DRI
 Name:		driconf
 Version:	0.9.1
 Release:	1
@@ -21,9 +21,9 @@ DRIConf is the first configuration GUI for DRI and the new
 ConfigurationInfrastructure. It is written in Python with the
 python-gtk toolkit bindings.
 
-%description -l pl
+%description -l pl.UTF-8
 DRIConf to pierwszy graficzny interfejs do konfiguracji DRI i nowej
-infrastruktury konfiguracji. Jest napisany w Pythonie z u¿yciem wi±zañ
+infrastruktury konfiguracji. Jest napisany w Pythonie z uÅ¼yciem wiÄ…zaÅ„
 python-gtk.
 
 %prep
