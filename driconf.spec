@@ -1,5 +1,5 @@
 Summary:	DRI configuration GUI
-Summary(pl.UTF-8):   Graficzny interfejs do konfiguracji DRI
+Summary(pl.UTF-8):	Graficzny interfejs do konfiguracji DRI
 Name:		driconf
 Version:	0.9.1
 Release:	1
