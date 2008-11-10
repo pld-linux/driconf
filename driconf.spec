@@ -2,7 +2,7 @@ Summary:	DRI configuration GUI
 Summary(pl.UTF-8):	Graficzny interfejs do konfiguracji DRI
 Name:		driconf
 Version:	0.9.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.gz
