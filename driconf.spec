@@ -3,15 +3,17 @@ Summary(pl.UTF-8):	Graficzny interfejs do konfiguracji DRI
 Name:		driconf
 Version:	0.9.1
 Release:	5
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications
+# 404 currently
 Source0:	http://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.gz
 # Source0-md5:	76d610bcd56aa5e8a489debb5081178a
-URL:		http://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
+URL:		http://dri.sourceforge.net/wiki/DriConf
 BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python-pygtk-gtk >= 2:2.4
 Requires:	xorg-app-xdriinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,18 +32,18 @@ python-gtk.
 %setup -q
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
 	--optimize=2 \
 	--prefix=%{_prefix} \
 	--install-purelib=%{py_sitescriptdir} \
 	--root=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{py_sitescriptdir}/*.py
+%py_postclean
 
 %find_lang %{name}
 
@@ -51,6 +53,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc CHANGELOG README TODO
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/driconf
 %{_datadir}/driconf
-%{py_sitescriptdir}/*.py[co]
+%{py_sitescriptdir}/dri.py[co]
+%{py_sitescriptdir}/driconf*.py[co]
+%if "%{py_ver}" > "2.4"
+%{py_sitescriptdir}/driconf-*.egg-info
+%endif
