@@ -13,7 +13,7 @@ BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	python-pygtk-gtk >= 2:2.4
 Requires:	xorg-app-xdriinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
