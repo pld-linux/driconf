@@ -8,11 +8,11 @@ Group:		X11/Applications
 Source0:	https://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.gz
 # Source0-md5:	76d610bcd56aa5e8a489debb5081178a
 URL:		https://dri.sourceforge.net/wiki/DriConf/
-BuildRequires:	python
-BuildRequires:	python-devel
-BuildRequires:	python-modules
+BuildRequires:	python >= 1:2.5
+BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-modules >= 1:2.5
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.710
+BuildRequires:	rpmbuild(macros) >= 1.714
 Requires:	python-pygtk-gtk >= 2:2.4
 Requires:	xorg-app-xdriinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,10 +36,7 @@ python-gtk.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%py_install \
-	--prefix=%{_prefix} \
-	--install-purelib=%{py_sitescriptdir} \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 %py_postclean
 
@@ -55,6 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/driconf
 %{py_sitescriptdir}/dri.py[co]
 %{py_sitescriptdir}/driconf*.py[co]
-%if "%{py_ver}" > "2.4"
-%{py_sitescriptdir}/driconf-*.egg-info
-%endif
+%{py_sitescriptdir}/driconf-%{version}-py*.egg-info
