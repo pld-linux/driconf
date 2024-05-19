@@ -5,10 +5,9 @@ Version:	0.9.1
 Release:	5
 License:	GPL v2+
 Group:		X11/Applications
-# 404 currently
-Source0:	http://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.gz
+Source0:	https://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.gz
 # Source0-md5:	76d610bcd56aa5e8a489debb5081178a
-URL:		http://dri.sourceforge.net/wiki/DriConf
+URL:		https://dri.sourceforge.net/wiki/DriConf/
 BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-modules
